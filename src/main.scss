@@ -2,8 +2,6 @@
 @use 'config';
 @use 'utils';
 
-
-
 * {
     @include reset-pm();
     box-sizing: border-box;
