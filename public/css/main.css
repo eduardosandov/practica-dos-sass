@@ -42,7 +42,15 @@ ul {
   gap: 20px;
 }
 ul li a {
-  color: red;
+  background-color: #ffe92e;
+  color: black;
+  border-radius: 50px;
+  padding: 20px 3px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: bolder;
 }
 
 /*# sourceMappingURL=main.css.map */
