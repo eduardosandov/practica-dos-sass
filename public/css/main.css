@@ -1,9 +1,9 @@
 /* Error: Undefined variable.
  *    ,
- * 24 |         @include btn($primary-color, $secondary-color, 'true');
+ * 18 |         @include btn($primary-color, $secondary-color, 'true');
  *    |                      ^^^^^^^^^^^^^^
  *    '
- *   src\_button.scss 24:22  @import
+ *   src\_button.scss 18:22  @import
  *   src\main.scss 1:9       root stylesheet */
 
 body::before {
@@ -14,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 24 \2502          @include btn($primary-color, $secondary-color, 'true');\d\a    \2502                       ^^^^^^^^^^^^^^\a    \2575 \a   src\\_button.scss 24:22  @import\a   src\\main.scss 1:9       root stylesheet";
+  content: "Error: Undefined variable.\a    \2577 \a 18 \2502          @include btn($primary-color, $secondary-color, 'true');\d\a    \2502                       ^^^^^^^^^^^^^^\a    \2575 \a   src\\_button.scss 18:22  @import\a   src\\main.scss 1:9       root stylesheet";
 }
