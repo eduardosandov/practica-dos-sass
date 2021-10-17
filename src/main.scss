@@ -12,9 +12,19 @@ $unit: 8px;
     @return $value * $unit;
 }
 
-* {
+@mixin reset-pm {
     padding: 0;
     margin: 0;
+}
+@mixin btn($background-color, $color, $bold) {
+    background-color: $background-color;
+    color: $color;
+    
+    
+}
+
+* {
+    @include reset-pm();
     box-sizing: border-box;
 
 }
@@ -48,4 +58,16 @@ h2 {
 
     background-image: url(../bg.jpeg);
     background-size: 100% 100%;
+}
+
+ul {
+    @include reset-pm();
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    li {
+        a {
+            color: red;
+        }
+    }
 }
