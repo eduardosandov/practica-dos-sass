@@ -1,5 +1,5 @@
 $primary-color: #ffe92e;
-$secundary-color: black;
+$secondary-color: black;
 $terciary-color: white;
 $font-color: #aaa;
 
@@ -20,7 +20,7 @@ $unit: 8px;
     background-color: $background-color;
     color: $color;
     border-radius: 50px;
-    padding: 20px 3px;
+    padding: 20px 30px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -28,8 +28,23 @@ $unit: 8px;
 
     @if ($bold == 'true') {
         font-weight: bolder;
+    }    
+}
+
+.btn {
+    &.btn-cta {
+        @include btn($primary-color, $secondary-color, 'true');
+        &:hover{
+            @include btn($secondary-color, $terciary-color, 'true');
+            box-shadow: $box-shadow;
+        }
     }
-    
+
+    &:hover{
+        @include btn($terciary-color, $secondary-color, 'true' );
+        box-shadow: $box-shadow;
+    }
+
 }
 
 * {
@@ -44,7 +59,7 @@ body{
 }
 
 a {
-    color: $secundary-color;
+    color: $secondary-color;
     text-decoration: none;
 }
 
@@ -76,7 +91,19 @@ ul {
     gap: 20px;
     li {
         a {
-            @include btn($background-color:$primary-color, $color: $secundary-color, $bold: 'true')
+            @include btn($background-color:$terciary-color, $color: $secondary-color, $bold: 'true');
+        &:hover{
+            @include btn($secondary-color, $terciary-color, 'false');
+            box-shadow: $box-shadow;
         }
+        }
+    }
+}
+
+header {
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 }
