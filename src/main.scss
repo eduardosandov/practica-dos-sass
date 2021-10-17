@@ -91,7 +91,7 @@ ul {
     gap: 20px;
     li {
         a {
-            @include btn($background-color:$terciary-color, $color: $secondary-color, $bold: 'true');
+            @include btn($background-color:$terciary-color, $color: $font-color, $bold: 'true');
         &:hover{
             @include btn($secondary-color, $terciary-color, 'false');
             box-shadow: $box-shadow;
@@ -105,5 +105,37 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    .col {
+        width: 50%;
+    }
+
+    .col-30{
+        width: 30%;
+    }
+
+    .col-70 {
+        width: 70%;
+    }
+}
+
+.m-auto {
+    margin: 0 auto;
+}
+
+@for $i from 1 to $limit {
+    .m-#{$i}{
+        margin: $i * $unit;
+    }
+    .p-#{$i}{
+        padding: $i * $unit;
+    }
+    .py-#{$i}{
+        padding: $i * $unit 0;
     }
 }
