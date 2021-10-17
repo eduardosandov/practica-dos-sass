@@ -1,3 +1,5 @@
+@import 'button';
+
 $primary-color: #ffe92e;
 $secondary-color: black;
 $terciary-color: white;
@@ -12,40 +14,8 @@ $unit: 8px;
     @return $value * $unit;
 }
 
-@mixin reset-pm {
-    padding: 0;
-    margin: 0;
-}
-@mixin btn($background-color, $color, $bold) {
-    background-color: $background-color;
-    color: $color;
-    border-radius: 50px;
-    padding: 20px 30px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
 
-    @if ($bold == 'true') {
-        font-weight: bolder;
-    }    
-}
 
-.btn {
-    &.btn-cta {
-        @include btn($primary-color, $secondary-color, 'true');
-        &:hover{
-            @include btn($secondary-color, $terciary-color, 'true');
-            box-shadow: $box-shadow;
-        }
-    }
-
-    &:hover{
-        @include btn($terciary-color, $secondary-color, 'true' );
-        box-shadow: $box-shadow;
-    }
-
-}
 
 * {
     @include reset-pm();
@@ -108,6 +78,20 @@ header {
     }
 }
 
+.prices{
+    .prev{
+        font-size: size(2);
+        font-weight: bolder;
+        color: $font-color;
+        text-decoration: line-through;
+
+    }
+    .now{
+        font-size: size(5);
+        font-weight: bolder;
+    }
+}
+
 .row {
     display: flex;
     align-items: center;
@@ -132,10 +116,22 @@ header {
     .m-#{$i}{
         margin: $i * $unit;
     }
+}
+
+@for $i from 1 to $limit {
     .p-#{$i}{
         padding: $i * $unit;
     }
+}
+
+@for $i from 1 to $limit {
     .py-#{$i}{
         padding: $i * $unit 0;
+    }
+}
+
+@for $i from 1 to 4{
+    .w-#{$i}{
+        width: $i * 25%;
     }
 }
